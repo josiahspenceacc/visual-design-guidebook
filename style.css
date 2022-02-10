@@ -160,6 +160,40 @@ dd {
 	margin-bottom: var(--space-sm);
 }
 
+
+/*-------------------------------------------------
+	Warning
+--------------------------------------------------*/
+
+.warning {
+	align-items: flex-start;
+	background-color: var(--color-accent);
+	display: flex;
+	gap: .75rem;
+	margin-top: var(--space-lg);
+	padding: var(--space-med);
+}
+
+.warning:before {
+	content: '!';
+	font-size: 5rem;
+	font-weight: 900;
+	line-height: .75;
+}
+
+.warning div {
+	max-width: 32rem;
+}
+
+.warning h2 {
+	margin-top: 0;
+}
+
+.warning p {
+	font-weight: 470;
+	margin-bottom: 0;
+}
+
 /*-------------------------------------------------
 	Figures
 --------------------------------------------------*/
@@ -185,6 +219,10 @@ body {
 
 .hero, .table-of-contents {
 	padding: var(--space-lg) var(--space-lg) 0;
+}
+
+.table-of-contents {
+	padding-top: 0;
 }
 
 .coming-soon {
@@ -246,7 +284,7 @@ body {
 
 .site-footer {
 	margin-block-start: var(--space-lg);
-	padding: var(--space-med);
+	padding: var(--space-lg);
 }
 
 /*-------------------------------------------------

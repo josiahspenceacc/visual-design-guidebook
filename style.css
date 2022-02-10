@@ -1,0 +1,298 @@
+@font-face{
+	font-family: 'Basier';
+	src: url('/fonts/basiercircle-bold-webfont.eot');
+	src: 	url('/fonts/basiercircle-bold-webfont.woff2') format('woff2'),
+			url('/fonts/basiercircle-bold-webfont.woff') format('woff'),
+			url('/fonts/basiercircle-bold-webfont.ttf') format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face{
+	font-family: 'Basier';
+	src: url('/fonts/basiercircle-bolditalic-webfont.eot');
+	src: 	url('/fonts/basiercircle-bolditalic-webfont.woff2') format('woff2'),
+			url('/fonts/basiercircle-bolditalic-webfont.woff') format('woff'),
+			url('/fonts/basiercircle-bolditalic-webfont.ttf') format('truetype');
+	font-weight: 700;
+	font-style: italic;
+}
+
+@font-face{
+	font-family: 'Basier';
+	src: url('/fonts/basiercircle-regular-webfont.eot');
+	src: 	url('/fonts/basiercircle-regular-webfont.woff2') format('woff2'),
+			url('/fonts/basiercircle-regular-webfont.woff') format('woff'),
+			url('/fonts/basiercircle-regular-webfont.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face{
+	font-family: 'Basier';
+	src: url('/fonts/basiercircle-regularitalic-webfont.eot');
+	src: 	url('/fonts/basiercircle-regularitalic-webfont.woff2') format('woff2'),
+			url('/fonts/basiercircle-regularitalic-webfont.woff') format('woff'),
+			url('/fonts/basiercircle-regularitalic-webfont.ttf') format('truetype');
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face{
+	font-family: 'Literata';
+	font-weight: 200 900; /* default: 400 */
+	font-style: normal;
+	font-stretch: normal;
+	src: url('/fonts/literata-subset.woff2') format('woff2 supports variations'), url('/fonts/literata-subset.woff2') format('woff2-variations');
+	/* opsz: 6-144 */
+}
+
+@font-face{
+	font-family: 'Literata';
+	font-weight: 200 900; /* default: 400 */
+	font-style: italic;
+	font-stretch: normal;
+	src: url('/fonts/literata-italic-subset.woff2') format('woff2 supports variations'), url('/fonts/literata-italic-subset.woff2') format('woff2-variations');
+	/* opsz: 6-144 */
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/*-------------------------------------------------
+	Variables
+--------------------------------------------------*/
+
+html {
+	--color-black: 		#3a3a3a;
+	--color-black-mid:	#878787;
+	--color-accent: 	rgb(237, 234, 60);
+
+	--font-primary: 	'Literata', Georgia, serif;
+	--font-secondary:	'Basier', Helvetica, Arial, sans-serif;
+
+	--space-sm:			1rem;
+	--space-med:		2rem;
+	--space-lg:			4rem;
+	--space-xlg:		6rem;
+}
+
+/*-------------------------------------------------
+	Typography
+--------------------------------------------------*/
+
+html {
+	color: var(--color-black);
+	font-family: var(--font-primary);
+	font-variant-numeric: oldstyle-nums;
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-secondary);
+	font-weight: 700;
+	line-height: 1.2em;
+}
+
+h1 {
+	font-size: 3rem;
+	line-height: 1;
+	margin-bottom: 0;
+}
+
+h2 {
+	margin: var(--space-lg) 0 var(--space-sm);
+}
+
+p {
+	margin: 0 0 var(--space-sm);
+}
+
+a {
+	background-image: linear-gradient(0deg, var(--color-accent) 0%, var(--color-accent) 100%);
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: 100% 50%;
+	color: black;
+	text-decoration: none;
+	transition: all .4s;
+}
+
+a:hover, a:focus {
+	background-size: 100% 100%;
+	outline: none;
+	transition: all .4s;
+}
+
+a:active {
+	background-image: linear-gradient(0deg, black 0%, black 100%);
+	background-size: 100% 100%;
+	color: white;
+}
+
+ul {
+	padding-inline-start: 1.5rem;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 0 var(--space-med) 0;
+}
+
+@media (min-width: 700px) {
+	html {
+		font-size: 17px;
+		line-height: 1.6;
+	}
+}
+
+@media (min-width: 800px) {
+	html {
+		font-size: 18px;
+	}
+}
+
+.article-body li {
+	margin-bottom: var(--space-sm);
+}
+
+/*-------------------------------------------------
+	Figures
+--------------------------------------------------*/
+
+figure {
+	background-color: ghostwhite;
+	border: 1px solid rgba(0,0,0,.1);
+	margin: 2rem 0 4rem;
+	padding: 3rem 10%;
+}
+
+/*-------------------------------------------------
+	Master Layout
+--------------------------------------------------*/
+
+body {
+	margin: 0;
+}
+
+/*-------------------------------------------------
+	Homepage
+--------------------------------------------------*/
+
+.hero, .table-of-contents {
+	padding: var(--space-lg) var(--space-lg) 0;
+}
+
+.coming-soon {
+	color: var(--color-black-mid);
+}
+
+/*-------------------------------------------------
+	Header
+--------------------------------------------------*/
+
+.site-header {
+	background-color: var(--color-black);
+	border-bottom: 2px solid var(--color-accent);
+	color: white;
+	margin: 0;
+	padding: var(--space-sm) var(--space-med);
+}
+
+.site-header a {
+	background-image: none;
+	color: #bbb;
+	padding: 0 .25rem;
+}
+
+.site-header a:hover {
+	background-color: var(--color-accent);
+	color: var(--color-black);
+}
+
+.site-header a:active {
+	background-color: white;
+}
+
+.site-header .logo {
+	background-color: transparent;
+	color: white;
+	display: inline-block;
+	padding: .5rem .75rem;
+}
+
+.site-header li {
+	display: inline-block;
+	margin-left: .5rem;
+}
+
+@media ( min-width: 800px ) {
+	
+	.site-header {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
+	
+}
+
+/*-------------------------------------------------
+	Footer
+--------------------------------------------------*/
+
+.site-footer {
+	margin-block-start: var(--space-lg);
+	padding: var(--space-med);
+}
+
+/*-------------------------------------------------
+	Forms
+--------------------------------------------------*/
+
+label, input, textarea, select {
+	display: block;
+}
+
+label {
+	margin: 1rem 0 .25rem;
+}
+
+input:not([type="submit"]), select {
+	font-size: 1rem;
+	padding: .5rem;
+}
+
+[type="checkbox"], [type="radio"], [type="range"] {
+	display: inline-block;
+}
+
+/*-------------------------------------------------
+	Article Header
+--------------------------------------------------*/
+
+/*Article header*/
+
+article header {
+	background-color: var(--color-accent);
+	border-bottom: 2px solid var(--color-accent);
+	margin-bottom: var(--space-xlg);
+	padding: 6rem 3rem 1.5rem;
+}
+
+
+.article-body {
+	margin: auto;
+	max-width: 57ch;
+}
+
+/*Topic with Example*/
+
+.topic-section figure {
+	align-self: center;
+	justify-self: center;
+	margin: 0;
+}

@@ -1,0 +1,74 @@
+---
+title: Search
+description: "Search the Guidebook"
+permalink: /search/
+---
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+{% include "head.liquid" %}
+
+<body>
+	{% include "header.liquid" %}
+
+	<main class="search-main">
+		<h1>Search the Guidebook</h1>
+
+		<div class="search-group">
+			<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+				<circle cx="11" cy="11" r="8"></circle>
+				<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+			</svg>
+			<label for="search">Search</label>
+			<input autocomplete="off" type="search" id="search" placeholder="Search terms" />
+		</div>
+
+		<ul id="results"></ul>
+	</main>
+	<script>
+
+		document.addEventListener('DOMContentLoaded', function(event) {
+			const search = document.getElementById('search');
+			const results = document.getElementById('results');
+			let data = [];
+			let search_term = '';
+
+			fetch('/search.json')
+				.then(response => response.json())
+				.then(data_server => {
+				data = data_server;
+		});
+
+		search.addEventListener('input', event => {
+			search_term = event.target.value.toLowerCase();
+			showList();
+		});
+
+		const showList = () => {
+			results.innerHTML = '';
+			if (search_term.length <= 0) return;
+				const match = new RegExp(`${search_term}`, 'gi');
+				let result = data.filter(name => match.test(name.terms));
+				if (result.length == 0) {
+					const li = document.createElement('li');
+					li.innerHTML = `No results found 😢`;
+					results.appendChild(li);
+				}
+				result.forEach(e => {
+					const li = document.createElement('li');
+					li.innerHTML = `<h3><a href="${e.url}">${e.title}</a></h3>
+					<div>${e.description }</div>`;
+					if ( e.links ) {
+						for ( let term of e.links ) {
+							li.innerHTML += term;
+						}
+					}
+					results.appendChild(li);
+				});
+			};
+		});
+
+	</script>
+
+</body>

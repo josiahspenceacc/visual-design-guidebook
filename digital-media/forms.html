@@ -1,0 +1,470 @@
+---
+title: Forms
+chapter: 10.5
+---
+
+<section class="topic-section">
+				
+	<div>
+
+		<h2>Single-Line Text</h2>
+
+		<p>The single-line text field accepts any text: letters, numbers, or other characters.</p>
+
+		<p>Because it is a single line field, it affords a limited amount of input. The length of the field may further indicate to the user how much content is expected.</p>
+
+		<p>The field imposes no limitation or validation of what the user may input.</p>
+
+	</div>
+		
+	<figure>
+
+		<label>Text Input</label>
+		<input type="text" placeholder="John Doe">
+
+	</figure>
+	
+</section>
+
+<section class="topic-section">
+	
+	<div>
+
+		<h2>Email Address</h2>
+
+		<p>The email address field looks and behaves nearly identical to the text input; however, it validates the input and will give an error if the submission doesn't seem to be a valid email address. (Typically, it looks for the presence of an @ symbol.)</p>
+
+		<p>On touch-screen devices, the field calls up an on-screen keyboard that includes the @ symbol.</p>
+		
+	</div>
+
+	<figure>
+
+		<label>Email Input</label>
+		<input type="email">
+
+	</figure>
+	
+</section>
+
+<section class="topic-section">
+	
+	<div>
+
+		<h2>Number</h2>
+
+		<p>The number field only accepts numeric input. In most browsers and other formats, it shows increment arrows on the right side when hovered or focussed.</p>
+
+		<p>The number field can be set to accept certain increment sizes, such (10, 20, 30 or 5, 10, 15, 20), but there is no limit on the range of numbers accepted.</p>
+
+		<p>On touch-screen devices, this field calls up an on-screen number-pad keyboard.</p>
+		
+	</div>
+
+	<figure>
+
+		<label>How many hats do you have?</label>
+		<input type="number">
+
+	</figure>
+	
+</section>
+
+<section class="topic-section">
+	
+	<div>
+
+		<h2>Password</h2>
+
+		<p>Like the text field, the password field accepts any characters as input, but dots or stars are usually used to obfuscate (visually hide) the input to protect the security of the user.</p>
+		
+	</div>
+
+	<figure>
+
+		<label>Password Input</label>
+		<input type="password">
+
+	</figure>
+	
+</section>
+
+<section class="topic-section">
+	
+	<div>
+
+		<h2>Search</h2>
+
+		<p>The search input is functionally the same as the text input, but after something has been typed an "x" icon appears to allow the user to clear out the field.</p>
+		
+	</div>
+
+	<figure>
+
+		<label>Search Input</label>
+		<input type="search">
+
+	</figure>
+	
+</section>
+
+<section class="topic-section">
+	
+	<div>
+
+		<h2>Phone Number</h2>
+
+		<p>This field accepts numbers, dashes, and parenthesis, and has validation that looks to see if the input has the correct number of digits to be a </p>
+
+		<p>On touch-screen devices, this field calls up an on-screen dial-pad keyboard.</p>
+		
+	</div>
+
+	<figure>
+
+		<label>Phone Number Input</label>
+		<input type="tel">
+
+	</figure>
+	
+</section>
+
+<section class="topic-section">
+	
+	<div>
+
+		<h2>URL</h2>
+
+		<p>The URL field validates the input to look for the presence of "http:" or "https:" to indicate the presence of a URL</p>
+
+		<p>On some touch-screen devices, the field calls up an on-screen keyboard that includes a ".com" key.</p>
+		
+	</div>
+
+	<figure>
+
+		<label>URL Input</label>
+		<input type="url">
+
+	</figure>
+	
+</section>
+
+<section class="topic-section">
+	
+	<div>
+
+		<h2>Multi-Line Text Area</h2>
+
+		<p>The multi-line text input field accepts any text input and allows many lines of input and keyboard-returns for line breaks. In most browsers, an internal scrollbar appears if the input is too long for the visible area. Some browsers allow the user to resize these fields.</p>
+
+		<p>This field is a good candidate for longer input without restriction.</p>
+		
+	</div>
+
+	<figure>
+
+		<label>Multi-Line Text Area</label>
+		<textarea></textarea>
+
+	</figure>
+	
+</section>
+
+<section class="topic-section">
+	
+	<div>
+
+		<h2>Select Dropdown</h2>
+
+		<p>By default, the select field is in a closed state where the options cannot be seen. When toggled open, it a list of options for the user to choose between. The user is limited to a single choice.</p>
+
+		<p>The select field is a good choice when the user must select between mutually-exclusive options and the list isn't especially long. Because the options aren't visible when the select is closed, it isn't the best choice when the options are important or need absolute clarity.</p>
+		
+	</div>
+
+	<figure>
+
+		<label>What bit?</label>
+		<select>
+			<option>Head</option>
+			<option>Shoulders</option>
+			<option>Knees</option>
+		</select>
+
+	</figure>
+	
+</section>
+
+<section class="topic-section">
+	
+	<div>
+
+		<h2>Select Dropdown with Grouped Options</h2>
+
+		<p>This is the same as the select field above, except the options in the dropdown are organized into groups under headings.</p>
+		
+	</div>
+
+	<figure>
+
+		<label>Select a snack</label>
+		<select>
+			<optgroup label="Fruits">
+				<option>Banana</option>
+				<option>Apple</option>
+				<option>Orange</option>
+			</optgroup>
+			<optgroup label="Bread">
+				<option>Rye</option>
+				<option>Wheat</option>
+				<option>Sourdough</option>
+			</optgroup>
+		</select>
+
+	</figure>
+	
+</section>
+
+<section class="topic-section">
+	
+	<div>
+
+		<h2>Multi-Select</h2>
+
+		<p>The multi-select is similar to a normal select, but the user can select as many options as desired, and the choices aren't hidden behind a dropdown.</p>
+
+		<p>To select more than one option, the user must hold shift while click on options. Because this behavior is less obvious, this field type is often avoided.</p>
+		
+	</div>
+
+	<figure>
+
+		<label>Which coconuts?</label>
+		<select multiple>
+			<option>Big ones</option>
+			<option>Small ones</option>
+			<option>Ones the size of your head</option>
+		</select>
+
+	</figure>
+	
+</section>
+
+<section class="topic-section">
+	
+	<div>
+
+		<h2>Auto-Complete</h2>
+
+		<p>The auto-complete field looks like a normal text field, but it is associated with a list of options. As the user types, the field suggests matching options. The user is also able to type in a completely custom value.</p>
+
+		<p>This is a good choice for inputs where there is an especially large number of options, so the user doesn't have to scroll to find the desired value.</p>
+		
+	</div>
+
+	<figure>
+
+		<label>What's your favorite fruit?</label>
+		<input type="text" list="mySuggestion">
+		<datalist id="mySuggestion">
+			<option>Apple</option>
+			<option>Banana</option>
+			<option>Blackberry</option>
+			<option>Blueberry</option>
+			<option>Lemon</option>
+			<option>Lychee</option>
+			<option>Peach</option>
+			<option>Pear</option>
+		</datalist>
+
+	</figure>
+	
+</section>
+
+<section class="topic-section">
+	
+	<div>
+
+		<h2>Checkboxes</h2>
+
+		<p>A checkbox is essentially a binary input: it is either checked or it isn't. For this reason, it is often used for situations where the user must indicate a yes or no value, such as opting in to notifications or acknowleding agreement.</p>
+
+		<p>Checkboxes are often grouped, which allows many options to be selected. This is good for situations where a user might want to indicate multiple choices or preferences.</p>
+		
+	</div>
+
+	<figure>
+
+		<fieldset>
+
+			<legend>Which is groovy?</legend>
+			<label><input type="checkbox"> Doowop</label>
+			<label><input type="checkbox"> Rock n' Roll</label>
+			<label><input type="checkbox"> Motown</label>
+
+		</fieldset>
+
+	</figure>
+	
+</section>
+
+<section class="topic-section">
+	
+	<div>
+
+		<h2>Radio</h2>
+
+		<p>Radio buttons are associated with a series of mutually-exclusive options; the user may only select one. Unlike the select field, all of the options are shown on the page without the need to toggle open a dropdown.</p>
+
+		<p>Radio buttons are good for situations in which users must choose one of several options and those options need to be more easily readable than a selct field allows.</p>
+		
+	</div>
+
+	<figure>
+
+		<fieldset>
+		<legend>What's your favorite meal?</legend>
+			<label for="soup"><input type="radio" name="meal" checked>Soup</label>
+
+			<label for="curry"><input type="radio" name="meal">Curry</label>
+
+			<label for="pizza"><input type="radio" name="meal">Pizza</label>
+
+		</fieldset>
+
+	</figure>
+	
+</section>
+
+<section class="topic-section">
+	
+	<div>
+
+		<h2>Buttons</h2>
+
+		<p>The purpose of a button is to trigger an action. Actions may include, submitting a form, saving work, canceling an action, or triggering an interaction.</p>
+		
+	</div>
+
+	<figure>
+
+		<button>Button</button>
+
+	</figure>
+	
+</section>
+
+<section class="topic-section">
+	
+	<div>
+
+		<h2>Range Slider</h2>
+
+		<p>The range slider field allows the user to select a value along a spectrum of values with a minimum and a maximum allowed value.</p>
+
+		<p>The allowed values along the range can be restricted to increments if desired.</p>
+
+		<p>This field is a good choice for sutuations where there is a linear spectrum of choices between a min and a max value.</p>
+		
+	</div>
+
+	<figure>
+
+		<label>Screen brightness</label>
+		<div>0 <input type="range" id="set-brightness" min="0" max="100" step="10"> 100</div>
+		Current brightness=<output class="screen-brightness"></output>
+
+	</figure>
+	
+</section>
+
+<section class="topic-section">
+	
+	<div>
+
+		<h2>Date, Time, and Date/Time</h2>
+
+		<p>Date, time, and date/time fields allow the user to choose a point in time. Most browsers offer built-in UI for making the selection, but the specifics can vary significantly.</p>
+		
+	</div>
+
+	<figure>
+
+		<label>Choose a date</label>
+		<input type="date">
+
+		<label>Choose a time</label>
+		<input type="time">
+
+		<label>Choose a date and time</label>
+		<input type="datetime-local">
+
+		<label>Choose a month</label>
+		<input type="month">
+
+		<label>Choose a week</label>
+		<input type="week">
+
+	</figure>
+	
+</section>
+
+<section class="topic-section">
+	
+	<div>
+
+		<h2>Color Picker</h2>
+
+		<p>The color picker field allows the user to choose a specific color value. Most browsers offer built-in UI for this field, but the specifics can vary significantly.</p>
+		
+	</div>
+
+	<figure>
+
+		<label>What's your favorite color?</label>
+		<input type="color">
+
+	</figure>
+	
+</section>
+
+<section class="topic-section">
+	
+	<div>
+
+		<h2>File Uploader</h2>
+
+		<p>The file uploader field allows the user to select a local file for upload when the form is submitted. Usually, this takes the form of a file selection button and the name of the file queued to upload, if any.</p>
+
+		<p>These fields can be set to restrict what type of file they will accept or a maximum allowed file size.</p>
+		
+	</div>
+
+	<figure>
+
+		<label>Upload an image</label>
+		<input type="file">
+
+	</figure>
+	
+</section>
+			
+		
+	
+<script>
+	
+	document.addEventListener("DOMContentLoaded", function() {
+	
+		var brightness = document.querySelector('#set-brightness');
+		var count = document.querySelector('.screen-brightness');
+
+		count.textContent = brightness.value;
+
+		brightness.oninput = function() {
+			count.textContent = brightness.value;
+		}
+		
+	})
+	
+</script>

@@ -1,0 +1,10 @@
+<li class="post">
+	{% if post.data.status == "Coming Soon" %}
+		<h5 class="coming-soon">{{ post.data.title }} (Coming Soon)</h5>
+	{% else %}
+		<h5><a href="{{ post.url }}">{{ post.data.title }}</a>
+			{% if post.data.status == "In Progress" %}(In Progress){% endif %}
+		</h5>
+		<div class="meta-text">{{ post.data.short_description }}</div>
+	{% endif %}
+</li>

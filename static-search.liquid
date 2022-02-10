@@ -1,0 +1,24 @@
+---
+permalink: '/search.json'
+---
+
+[  
+	{% for entry in collections.chapter %} 
+	{ 
+		"title":"{{ entry.data.title }}",
+		"url":"{{ entry.url | url }}",
+		"description":"{{ entry.data.short_description | url }}",
+		"terms":  [
+			"{{ entry.data.title }}",
+			{% for subheading in entry.data.sections %}"{{ subheading | downcase }}"{% if forloop.last == false %},{% else %}{% if entry.data.search_terms %},{% endif %}{% endif %}
+			{% endfor %}
+			{% for subheading in entry.data.search_terms %}"{{ subheading | downcase }}"{% if forloop.last == false %},{% endif %}
+			{% endfor %}
+		] ,
+		"links":  [
+			{% for subheading in entry.data.sections %}"<a href='{{ entry.url }}#{{ subheading | slugify }}'>{{ subheading }}</a>"{% if forloop.last == false %},{% endif %}
+			{% endfor %}
+		] 
+	}{% if forloop.last == false %},{% endif %} 
+	{% endfor %}  
+]

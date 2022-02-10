@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+{% include "head.liquid" %}
+
+<body>
+	{% include "header.liquid" %}
+
+	<main>
+		<article id="app">
+
+			<header>
+
+				<h1>{{ title }}</h1>
+
+				<p>{{ description }}</p>
+
+				{% if sections %}
+
+					<nav class="page-nav">
+						<h2>On This Page</h2>
+							
+						{% for section in sections %}
+							{% if forloop.first %}
+							<ul class="page-nav-listing {% if forloop.length > 7 %}long-list{% endif %}">
+							{% endif %}
+								<li><a href="{{ page.url }}#{{ section | slugify }}">{{ section }}</a></li>
+							{% if forloop.last %}
+							</ul>
+							{% endif %}
+						{% endfor %}
+					</nav>
+
+				{% endif %}
+
+			</header>
+
+			<div class="article-body">
+
+				{{ content }}
+
+			</div>
+
+			<nav class="chapter-nav">
+
+				<ol>
+
+					{% assign prevChap = chapter | minus: 1 %}
+					
+					{% assign prevList = collections.chapter | where2: "chapter", prevChap %}
+
+					{% for prev in prevList %}
+
+						{% if prev.data.chapter < 10 %}
+							{% assign chapNumber = prev.data.chapter | prepend: '0' %}
+						{% else %}
+							{% assign chapNumber = prev.data.chapter %}
+						{% endif %}
+
+							<li class="prev-chapter">
+								<div>Previous Chapter:</div>
+								<a href="{{ prev.url }}">{{ chapNumber }}: {{ prev.data.title }}</a>
+							</li>
+
+					{% endfor %}
+
+
+					{% assign nextChap = chapter | plus: 1 %}
+					
+					{% assign nextList = collections.chapter | where2: "chapter", nextChap %}
+
+					{% for next in nextList %}
+
+						{% if next.data.chapter < 10 %}
+							{% assign chapNumber = next.data.chapter | prepend: '0' %}
+						{% else %}
+							{% assign chapNumber = next.data.chapter %}
+						{% endif %}
+
+							<li class="next-chapter">
+								<div>Next Chapter:</div>
+								<a href="{{ next.url }}">{{ chapNumber }}: {{ next.data.title }}</a>
+							</li>
+
+					{% endfor %}
+
+				</ol>
+
+			</nav>
+
+		</article>
+	</main>
+
+	{% include "footer.liquid" %}
+
+</body>
+</html>

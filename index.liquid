@@ -1,0 +1,106 @@
+---
+title: Homepage
+---
+
+<!DOCTYPE html>
+<html lang="en-us" class="home-page">
+
+{% include "head.liquid" %}
+
+<body>
+
+	<header class="hero">
+		
+		<h1>Visual Design Guidebook</h1>
+
+		<p class="byline">by Josiah Spence</p>
+		
+		<p>A free online guide to visual design for absolute beginners.</p>
+		
+	</header>
+
+	<main class="site-index">
+		<nav class="table-of-contents">
+
+			<h2>Table of Contents</h2>
+
+			<section>
+
+				<h3>Visual Language</h3>
+
+				{% assign visualposts = collections['visual language'] | sortByTitle %}
+
+				<ul>
+					{% for post in visualposts  %}
+						{% include "chapter-listing.liquid"%}
+					{% endfor %}
+				</ul>
+			</section>
+
+			<section>
+
+				<h3>Digital Media</h3>
+
+				{% assign digitalposts = collections['digital media'] | sortByTitle %}
+
+				<ul>
+					{% for post in digitalposts  %}
+						{% include "chapter-listing.liquid"%}
+					{% endfor %}
+				</ul>
+			</section>
+
+			<section>
+
+				<h3>Design Process</h3>
+
+				{% assign processposts = collections.process | sortByTitle %}
+
+				<ul>
+					{% for post in processposts  %}
+						{% include "chapter-listing.liquid"%}
+					{% endfor %}
+				</ul>
+			</section>
+
+			<section>
+
+				<h3>Communicating Designs</h3>
+
+				{% assign communicationposts = collections.communication | sortByTitle %}
+
+				<ul>
+					{% for post in communicationposts  %}
+						{% include "chapter-listing.liquid"%}
+					{% endfor %}
+				</ul>
+			</section>
+
+			<section>
+
+				<h3>Reference Resources</h3>
+
+				{% assign referenceposts = collections.reference | sortByTitle %}
+
+				<ul>
+					{% for post in referenceposts  %}
+						{% include "chapter-listing.liquid"%}
+					{% endfor %}
+				</ul>
+			</section>
+
+		</nav>
+
+	</main>
+
+	<footer class="site-footer">
+		<div class="licence">
+
+			<p>This book is made available under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.</p>
+
+		</div>
+	</footer>
+	
+</body>
+
+</html>

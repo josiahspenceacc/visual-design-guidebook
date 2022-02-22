@@ -16,6 +16,12 @@ module.exports = eleventyConfig => {
   };
   eleventyConfig.setLibrary("md", markdownIt(options));
 
+  // Sorted Chapters Collection
+  eleventyConfig.addCollection("sortedChapters", function (collectionApi) {
+    
+    return collectionApi.getFilteredByTag("chapter").sort((a, b) => Math.sign(a.data.chapter - b.data.chapter));
+  });
+
   //Filters
   eleventyConfig.addFilter("sortByTitle", values => {
     return values.slice().sort((a, b) => Math.sign(a.data.chapter - b.data.chapter));

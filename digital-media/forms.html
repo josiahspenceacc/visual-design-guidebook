@@ -3,11 +3,47 @@ title: Forms
 chapter: 10.5
 ---
 
+<p>As we’ve discussed already, interaction means anything that allows the user to communicate to the computer. Often, this refers to simple controls like links, buttons, or scrollbars that allow the user to tell the computer what action they wish to take (like visiting a new page, opening a dialog, or scrolling down to see more content). But sometimes it’s necessary for users to communicate information that is more dense and more structured. For these cases, we use forms.</p>
+
+<div class="callout">
+	<p>Forms are special kinds of interactions for gathering specific structured information from a user.</p>
+</div>
+
+<p>Forms are very common on the web, in mobile apps, and in desktop software. You might think of a payment form on an e-commerce site, or a contact form for sending a message, or a signup form for creating a new account. But you might be surprised about some of the places we use forms without really thinking of them as forms. The interface you use to write and send an email—that’s a form. The fields you fill in when posting to a social media feed—also a form. The bar where you write and send a text message on your phone—yep, also a form.</p>
+
+<h2 id="fields-and-labels">Fields and Labels</h2>
+
+<p>Forms are made up of fields into which the user inputs a specific piece of requested information. For instance, a login form usually has three fields: one for a username, one for a password, and a button to submit the login attempt. By adding different fields, a form can be made to gather any kind or amount of information.</p>
+
+<p>Every field should be accompanied by a label to indicate what information the user should enter. It’s incredibly important that labels should be clear, consistent, and readable. Otherwise, the user would have no idea what you are asking of them. And missing or unclear labels can be even worse for non-sighted users who are experiencing the form through a screen-reader. The effect can be quite disorienting!</p>
+
+<div class="callout">
+	<p>While it’s common to see forms that user placeholder text inside of the form fields instead of labels outside of the fields, this is actually pretty bad for usability.</p>
+</div>
+
+<p>To understand why, consider that when the user clicks in a field with only a placeholder as the label, the label disappears, so the user has no way to double-check their work. Additionally, placeholder text is usually not read aloud by screen-readers, so non-sighted users get no information about what they are expected to put in any field labeled this way.</p>
+
+<h2 id="tips-for-designing-forms">Tips for Designing Forms</h2>
+
+<p>Forms are used for many different purposes in many different contexts, but here are some general guidelines for designing relatively standard forms:</p>
+
+<ul>
+	<li>Because users can easily get lost or become overwhelmed when filling in forms (just think of doing your taxes!), it’s a good idea to keep the layout as simple as possible so there is no confusion or getting lost. In general, this means most forms should be a single column, top-to-bottom, with no fancy formatting.</li>
+	<li>Another way to help users avoid feeling overwhelmed is to break up the form into small sub-sections. You can add headings for the sections, or you can simply break them up with a bit of extra vertical space. (Remember, because of the Law of Proximity, the user will perceive fields that are relatively close together as groups, while fields that are separated by extra space will be perceived as more separate.) This is especially important when forms are longer than just a few fields.</li>
+	<li>Use the size of a field to indicate how much input is expected from the user. For instance, if you are looking for a two-letter state abbreviation, only make the field wide enough for two letters to fit comfortably. This helps the user to quickly understand what to do.</li>
+	<li>Labels should be closest to the field to which they refer. Remember the Law of Proximity.</li>
+</ul>
+
+<h2 id="standard-field-types">Standard Field Types</h2>
+
+<p>There are many different kinds of form fields, from the standard single-line text input to fancy things like file pickers. It’s important to provide the right kind of form field based on the kind of information being gathered and other related considerations. </p>
+<p>Here are the standard field types that are commonly used across most operating systems and the web.</p>
+
 <section class="topic-section">
 				
 	<div>
 
-		<h2>Single-Line Text</h2>
+		<h3>Single-Line Text</h3>
 
 		<p>The single-line text field accepts any text: letters, numbers, or other characters.</p>
 
@@ -30,7 +66,7 @@ chapter: 10.5
 	
 	<div>
 
-		<h2>Email Address</h2>
+		<h3>Email Address</h3>
 
 		<p>The email address field looks and behaves nearly identical to the text input; however, it validates the input and will give an error if the submission doesn't seem to be a valid email address. (Typically, it looks for the presence of an @ symbol.)</p>
 
@@ -51,7 +87,7 @@ chapter: 10.5
 	
 	<div>
 
-		<h2>Number</h2>
+		<h3>Number</h3>
 
 		<p>The number field only accepts numeric input. In most browsers and other formats, it shows increment arrows on the right side when hovered or focussed.</p>
 
@@ -74,7 +110,7 @@ chapter: 10.5
 	
 	<div>
 
-		<h2>Password</h2>
+		<h3>Password</h3>
 
 		<p>Like the text field, the password field accepts any characters as input, but dots or stars are usually used to obfuscate (visually hide) the input to protect the security of the user.</p>
 		
@@ -93,7 +129,7 @@ chapter: 10.5
 	
 	<div>
 
-		<h2>Search</h2>
+		<h3>Search</h3>
 
 		<p>The search input is functionally the same as the text input, but after something has been typed an "x" icon appears to allow the user to clear out the field.</p>
 		
@@ -112,7 +148,7 @@ chapter: 10.5
 	
 	<div>
 
-		<h2>Phone Number</h2>
+		<h3>Phone Number</h3>
 
 		<p>This field accepts numbers, dashes, and parenthesis, and has validation that looks to see if the input has the correct number of digits to be a </p>
 
@@ -133,7 +169,7 @@ chapter: 10.5
 	
 	<div>
 
-		<h2>URL</h2>
+		<h3>URL</h3>
 
 		<p>The URL field validates the input to look for the presence of "http:" or "https:" to indicate the presence of a URL</p>
 
@@ -154,7 +190,7 @@ chapter: 10.5
 	
 	<div>
 
-		<h2>Multi-Line Text Area</h2>
+		<h3>Multi-Line Text Area</h3>
 
 		<p>The multi-line text input field accepts any text input and allows many lines of input and keyboard-returns for line breaks. In most browsers, an internal scrollbar appears if the input is too long for the visible area. Some browsers allow the user to resize these fields.</p>
 
@@ -175,7 +211,7 @@ chapter: 10.5
 	
 	<div>
 
-		<h2>Select Dropdown</h2>
+		<h3>Select Dropdown</h3>
 
 		<p>By default, the select field is in a closed state where the options cannot be seen. When toggled open, it a list of options for the user to choose between. The user is limited to a single choice.</p>
 
@@ -200,7 +236,7 @@ chapter: 10.5
 	
 	<div>
 
-		<h2>Select Dropdown with Grouped Options</h2>
+		<h3>Select Dropdown with Grouped Options</h3>
 
 		<p>This is the same as the select field above, except the options in the dropdown are organized into groups under headings.</p>
 		
@@ -230,7 +266,7 @@ chapter: 10.5
 	
 	<div>
 
-		<h2>Multi-Select</h2>
+		<h3>Multi-Select</h3>
 
 		<p>The multi-select is similar to a normal select, but the user can select as many options as desired, and the choices aren't hidden behind a dropdown.</p>
 
@@ -255,7 +291,7 @@ chapter: 10.5
 	
 	<div>
 
-		<h2>Auto-Complete</h2>
+		<h3>Auto-Complete</h3>
 
 		<p>The auto-complete field looks like a normal text field, but it is associated with a list of options. As the user types, the field suggests matching options. The user is also able to type in a completely custom value.</p>
 
@@ -286,7 +322,7 @@ chapter: 10.5
 	
 	<div>
 
-		<h2>Checkboxes</h2>
+		<h3>Checkboxes</h3>
 
 		<p>A checkbox is essentially a binary input: it is either checked or it isn't. For this reason, it is often used for situations where the user must indicate a yes or no value, such as opting in to notifications or acknowleding agreement.</p>
 
@@ -313,7 +349,7 @@ chapter: 10.5
 	
 	<div>
 
-		<h2>Radio</h2>
+		<h3>Radio</h3>
 
 		<p>Radio buttons are associated with a series of mutually-exclusive options; the user may only select one. Unlike the select field, all of the options are shown on the page without the need to toggle open a dropdown.</p>
 
@@ -341,7 +377,7 @@ chapter: 10.5
 	
 	<div>
 
-		<h2>Buttons</h2>
+		<h3>Buttons</h3>
 
 		<p>The purpose of a button is to trigger an action. Actions may include, submitting a form, saving work, canceling an action, or triggering an interaction.</p>
 		
@@ -359,7 +395,7 @@ chapter: 10.5
 	
 	<div>
 
-		<h2>Range Slider</h2>
+		<h3>Range Slider</h3>
 
 		<p>The range slider field allows the user to select a value along a spectrum of values with a minimum and a maximum allowed value.</p>
 
@@ -383,7 +419,7 @@ chapter: 10.5
 	
 	<div>
 
-		<h2>Date, Time, and Date/Time</h2>
+		<h3>Date, Time, and Date/Time</h3>
 
 		<p>Date, time, and date/time fields allow the user to choose a point in time. Most browsers offer built-in UI for making the selection, but the specifics can vary significantly.</p>
 		
@@ -414,7 +450,7 @@ chapter: 10.5
 	
 	<div>
 
-		<h2>Color Picker</h2>
+		<h3>Color Picker</h3>
 
 		<p>The color picker field allows the user to choose a specific color value. Most browsers offer built-in UI for this field, but the specifics can vary significantly.</p>
 		
@@ -433,7 +469,7 @@ chapter: 10.5
 	
 	<div>
 
-		<h2>File Uploader</h2>
+		<h3>File Uploader</h3>
 
 		<p>The file uploader field allows the user to select a local file for upload when the form is submitted. Usually, this takes the form of a file selection button and the name of the file queued to upload, if any.</p>
 

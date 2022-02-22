@@ -45,44 +45,25 @@
 
 				<ol>
 
-					{% assign prevChap = chapter | minus: 1 %}
-					
-					{% assign prevList = collections.chapter | where2: "chapter", prevChap %}
+					{% assign previousPost = collections.sortedChapters | getPreviousCollectionItem: page %}
+					{% assign nextPost = collections.sortedChapters | getNextCollectionItem: page %}
 
-					{% for prev in prevList %}
+					{% if previousPost %}
 
-						{% if prev.data.chapter < 10 %}
-							{% assign chapNumber = prev.data.chapter | prepend: '0' %}
-						{% else %}
-							{% assign chapNumber = prev.data.chapter %}
-						{% endif %}
+						<li class="prev-chapter">
+							<div>Previous Chapter:</div>
+							<a href="{{ previousPost.url }}">{{ previousPost.data.chapter }}: {{ previousPost.data.title }}</a>
+						</li>
 
-							<li class="prev-chapter">
-								<div>Previous Chapter:</div>
-								<a href="{{ prev.url }}">{{ chapNumber }}: {{ prev.data.title }}</a>
-							</li>
+					{% endif %}
 
-					{% endfor %}
+					{% if nextPost %}
 
-
-					{% assign nextChap = chapter | plus: 1 %}
-					
-					{% assign nextList = collections.chapter | where2: "chapter", nextChap %}
-
-					{% for next in nextList %}
-
-						{% if next.data.chapter < 10 %}
-							{% assign chapNumber = next.data.chapter | prepend: '0' %}
-						{% else %}
-							{% assign chapNumber = next.data.chapter %}
-						{% endif %}
-
-							<li class="next-chapter">
-								<div>Next Chapter:</div>
-								<a href="{{ next.url }}">{{ chapNumber }}: {{ next.data.title }}</a>
-							</li>
-
-					{% endfor %}
+						<li class="next-chapter">
+							<div>Next Chapter:</div>
+							<a href="{{ nextPost.url }}">{{ nextPost.data.chapter }}: {{ nextPost.data.title }}</a>
+						</li>
+					{% endif %}
 
 				</ol>
 
